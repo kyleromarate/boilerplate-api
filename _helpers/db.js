@@ -1,6 +1,9 @@
+const path = require('path')
 const config = require('config.json');
 const mysql = require('mysql2/promise');
 const { Sequelize } = require('sequelize');
+
+
 
 module.exports = db = {};
 
@@ -14,6 +17,9 @@ async function initialize() {
 
     //connect to db
     const sequelize = new Sequelize(database, user, password, {dialect: 'mysql' });
+
+    //const refreshTokenModelPath = path.resolve(__dirname, '../accounts/refresh-token.model');
+    //console.log('Resolved path for refresh-token.model.js:', refreshTokenModelPath);
 
     // init models and add them to the exported db object
     db.Account = require('../accounts/account.model')(sequelize);

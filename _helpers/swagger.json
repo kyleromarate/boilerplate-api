@@ -1,0 +1,38 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Sample API",
+      "version": "1.0.0",
+      "description": "This is a sample API documentation."
+    },
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get all users",
+          "description": "Returns a list of all users.",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -5,6 +5,7 @@ const validateRequest = require('_middleware/validate-request');
 const authorize = require('_middleware/authorize')
 const Role = require('_helpers/role');
 const accountService = require('./account.service');
+//db.RefreshToken = require('../accounts/refresh-token.model')(sequelize);
 
 // routes
 router.post('/authenticate', authenticateSchema, authenticate);
@@ -230,7 +231,7 @@ function setTokenCookie(res, token) {
     // create cookie with refresh token that expires in 7 days 
     const cookieOptions = {
         httpOnly: true,
-        expires: new Date(Date.now() + 72460601000)
+        expires: new Date(Date.now() + 7*24*60*60*1000)
     };    
     res.cookie('refreshToken', token, cookieOptions);
 }    
