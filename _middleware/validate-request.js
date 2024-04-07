@@ -12,6 +12,5 @@ function validateRequest(req, next, schema) {
     } else {
         req.body = value;
         next();
-        
     }
 }

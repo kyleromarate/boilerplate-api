@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 
-
 module.exports = model;
 
 function model(sequelize) {
@@ -23,7 +22,7 @@ function model(sequelize) {
     };
 
     const options = {
-        // Disable default timestamp fields (createdAt and updatedAt)
+        // disable default timestamp fields (createdAt and updatedAt)
         timestamps: false
     };
 
